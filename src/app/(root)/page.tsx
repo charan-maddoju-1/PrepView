@@ -21,7 +21,7 @@ const page = () => {
         <Image src="/robot.png" alt="robo image" width={400} height={400} className='max-sm:hidden'/>
       </section>
 
-      <section className='flex flex-col gap-6 mt-8 px-10'>
+      <section className='flex flex-col gap-6 mt-8'>
         <h2>Your Past Interviews</h2>
         <div className="interviews-section">
           {dummyInterviews.map(interview=>(
@@ -30,7 +30,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 mt-8 px-10">
+      <section className="flex flex-col gap-6 mt-8">
         <h2>Take an Interview</h2>
         <div className='interviews-section'>
           {dummyInterviews.map(interview=>(
