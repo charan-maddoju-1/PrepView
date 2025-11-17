@@ -1,6 +1,4 @@
-// import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
-// import { z } from "zod";
-
+import { z } from "zod";
 import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
 
 export const mappings = {
@@ -157,39 +155,39 @@ End the conversation on a polite and positive note.
   },
 };
 
-// export const feedbackSchema = z.object({
-//   totalScore: z.number(),
-//   categoryScores: z.tuple([
-//     z.object({
-//       name: z.literal("Communication Skills"),
-//       score: z.number(),
-//       comment: z.string(),
-//     }),
-//     z.object({
-//       name: z.literal("Technical Knowledge"),
-//       score: z.number(),
-//       comment: z.string(),
-//     }),
-//     z.object({
-//       name: z.literal("Problem Solving"),
-//       score: z.number(),
-//       comment: z.string(),
-//     }),
-//     z.object({
-//       name: z.literal("Cultural Fit"),
-//       score: z.number(),
-//       comment: z.string(),
-//     }),
-//     z.object({
-//       name: z.literal("Confidence and Clarity"),
-//       score: z.number(),
-//       comment: z.string(),
-//     }),
-//   ]),
-//   strengths: z.array(z.string()),
-//   areasForImprovement: z.array(z.string()),
-//   finalAssessment: z.string(),
-// });
+export const feedbackSchema = z.object({
+  totalScore: z.number(),
+  categoryScores: z.object({
+    communicationSkills: z.object({
+      name:z.literal("Communication Skills"),
+      score: z.number(),
+      comment: z.string(),
+    }),
+    technicalKnowledge: z.object({
+      name:z.literal("Technical knowledge"),
+      score: z.number(),
+      comment: z.string(),
+    }),
+    problemSolving: z.object({
+      name:z.literal("Problem Solving"),
+      score: z.number(),
+      comment: z.string(),
+    }),
+    culturalFit: z.object({
+      name:z.literal("Cultural Fit & Role Fit"),
+      score: z.number(),
+      comment: z.string(),
+    }),
+    confidenceAndClarity: z.object({
+      name:z.literal("Confindence and Clarity"),
+      score: z.number(),
+      comment: z.string(),
+    })
+  }),
+  strengths: z.string(),              // newline separated list
+  areasForImprovement: z.string(),    // newline separated list
+  finalAssessment: z.string(),
+});
 
 export const interviewCovers = [
   "/adobe.png",
